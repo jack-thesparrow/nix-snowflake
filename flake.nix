@@ -16,13 +16,13 @@
     nixosConfigurations = {
       nixos = lib.nixosSystem {
         inherit system;
-        modules = [./configuration.nix];
+        modules = [./profiles/personal/configuration.nix];
       };
     };
     homeConfigurations = {
       rahul = home-manager.lib.homeManagerConfiguration {
 	inherit pkgs;
-	modules = [./home.nix];
+	modules = [./profiles/personal/home.nix];
       };			
     };
     devShells = {
