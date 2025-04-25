@@ -25,6 +25,7 @@
     ../../user/shell/sh.nix
     ../../user/lang/lang.nix
     ../../user/shell/cli-collection.nix
+    #../../user/shell/tty-edit.nix
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

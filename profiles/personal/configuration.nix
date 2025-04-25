@@ -7,7 +7,8 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ../../system/hardware-configuration.nix
+    ../../system/hardware-configuration.nix
+    ../../profiles/personal/modules/console/console-font.nix
     ];
 
   # Bootloader.
