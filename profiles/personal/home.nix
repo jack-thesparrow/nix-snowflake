@@ -17,13 +17,14 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-     pkgs.hello
+  home.packages = with pkgs; [
+    hello
   ];
   imports = [ 
     ../../user/app/userApps.nix
     ../../user/shell/sh.nix
     ../../user/lang/lang.nix
+    ../../user/shell/cli-collection.nix
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

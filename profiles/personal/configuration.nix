@@ -47,7 +47,10 @@
     layout = "us";
     variant = "";
   };
-
+  
+  # Use the Cachy Kernel
+  my.kernel.useCachy = true;
+  
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.rahul = {
     isNormalUser = true;

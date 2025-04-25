@@ -4,7 +4,7 @@ let
     ll = "ls -l";
     ".." = "cd ..";
     "cls" = "clear";
-    "dot" = "cd && cd .dotfiles";
+    "dots" = "cd && cd .dotfiles";
   };
 in
   {
