@@ -23,6 +23,7 @@
   imports = [ 
     ../../user/app/userApps.nix
     ../../user/shell/sh.nix
+    ../../user/lang/lang.nix
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
