@@ -50,8 +50,8 @@
       ${system} = {
         default = pkgs.mkShell {
           buildInputs = with pkgs; [
-            gcc
-            clang
+            #gcc
+            #clang
             dialog
             ncurses
           ];

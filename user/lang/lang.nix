@@ -2,5 +2,6 @@
 {
   imports = [
     ./android/android.nix
+    ./cc/cc.nix
   ];
 }
