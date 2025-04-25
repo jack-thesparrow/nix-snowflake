@@ -3,11 +3,7 @@
   description = "My first flake!";
 
   inputs = {
-<<<<<<< HEAD
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-=======
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
->>>>>>> 3b09405 (Rebuilt from scratch)
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -20,21 +16,13 @@
     nixosConfigurations = {
       nixos = lib.nixosSystem {
         inherit system;
-<<<<<<< HEAD
-        modules = [./configuration.nix];
-=======
         modules = [./profiles/personal/configuration.nix];
->>>>>>> 3b09405 (Rebuilt from scratch)
       };
     };
     homeConfigurations = {
       rahul = home-manager.lib.homeManagerConfiguration {
 	inherit pkgs;
-<<<<<<< HEAD
-	modules = [./home.nix];
-=======
 	modules = [./profiles/personal/home.nix];
->>>>>>> 3b09405 (Rebuilt from scratch)
       };			
     };
     devShells = {
