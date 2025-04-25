@@ -4,7 +4,11 @@ let
     ll = "ls -l";
     ".." = "cd ..";
     "cls" = "clear";
+<<<<<<< HEAD
     "dots" = "cd && cd .dotfiles";
+=======
+    "dot" = "cd && cd .dotfiles";
+>>>>>>> 3b09405 (Rebuilt from scratch)
   };
 in
   {
