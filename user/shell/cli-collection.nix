@@ -4,5 +4,6 @@
     disfetch lolcat cowsay sl fastfetch
     unzip
     hwinfo
+    tree
   ];
 }
