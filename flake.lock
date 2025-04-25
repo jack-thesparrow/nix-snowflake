@@ -1,6 +1,6 @@
 {
   "nodes": {
-    "cachy-kernel": {
+    "chaotic": {
       "inputs": {
         "fenix": "fenix",
         "flake-schemas": "flake-schemas",
@@ -28,7 +28,7 @@
     "fenix": {
       "inputs": {
         "nixpkgs": [
-          "cachy-kernel",
+          "chaotic",
           "nixpkgs"
         ],
         "rust-analyzer-src": "rust-analyzer-src"
@@ -64,7 +64,7 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "cachy-kernel",
+          "chaotic",
           "nixpkgs"
         ]
       },
@@ -107,7 +107,7 @@
       "inputs": {
         "nix-github-actions": "nix-github-actions",
         "nixpkgs": [
-          "cachy-kernel",
+          "chaotic",
           "nixpkgs"
         ]
       },
@@ -128,7 +128,7 @@
     "nix-github-actions": {
       "inputs": {
         "nixpkgs": [
-          "cachy-kernel",
+          "chaotic",
           "jovian",
           "nixpkgs"
         ]
@@ -166,7 +166,7 @@
     },
     "root": {
       "inputs": {
-        "cachy-kernel": "cachy-kernel",
+        "chaotic": "chaotic",
         "home-manager": "home-manager_2",
         "nixpkgs": "nixpkgs"
       }

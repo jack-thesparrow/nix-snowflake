@@ -15,7 +15,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -50,6 +50,7 @@
   
   # Use the Cachy Kernel
   my.kernel.useCachy = true;
+  #boot.kernelPackages = pkgs.linuxPackages_cachyos;
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.rahul = {
@@ -68,7 +69,9 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
   ];
-  
+  # Enable the chaotic repo
+  #chaotic.mesa-git.enable = true;
+    
   # I use fish btw
   environment.shells = with pkgs; [ fish zsh bash ];
   users.defaultUserShell = pkgs.fish;
