@@ -49,7 +49,7 @@
   };
   
   # Use the Cachy Kernel
-  my.kernel.useCachy = true;
+  #my.kernel.useCachy = true;
   #boot.kernelPackages = pkgs.linuxPackages_cachyos;
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
