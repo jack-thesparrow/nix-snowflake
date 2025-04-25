@@ -9,13 +9,16 @@
     [ # Include the results of the hardware scan.
     ../../system/hardware-configuration.nix
     ../../profiles/personal/modules/console/console-font.nix
+    ./modules/kernel/cachy-kernel.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  # Enable the CachyOS Kernel
+  enableCachyKernel = true;
+  #boot.kernelPackages = pkgs.linuxPackages_cachyos;
   
   networking.hostName = "nixos"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

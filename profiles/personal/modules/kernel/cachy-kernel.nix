@@ -1,12 +1,13 @@
-{ config, pkgs, lib, ... }:
+{ config, lib, pkgs, chaotic, ... }:
+with lib;
 {
-  options.my.kernel.useCachy = lib.mkOption {
-    type = lib.types.bool;
+  options.enableCachyKernel = mkOption {
+    type = types.bool;
     default = false;
-    description = "Use Cachy Kernel instead of the default kernel";
+    description = "Enable the CachyOS kernel.";
   };
-  config = lib.mkIf 
-  config.my.kernel.useCachy {
-    boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  config = mkIf config.enableCachyKernel {
+    boot.kernelPackages = pkgs.linuxPackagesFor 
+    chaotic.packages.${pkgs.system}.linux_cachyos;
   };
 }
