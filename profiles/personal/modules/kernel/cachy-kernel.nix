@@ -2,7 +2,7 @@
 {
   options.my.kernel.useCachy = lib.mkOption {
     type = lib.types.bool;
-    default = false;
+    default = true;
     description = "Use Cachy Kernel instead of the default kernel";
   };
   config = lib.mkIf config.my.kernel.useCachy {
