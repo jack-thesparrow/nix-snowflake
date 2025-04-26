@@ -25,7 +25,7 @@
     ../../user/shell/sh.nix
     ../../user/lang/lang.nix
     ../../user/shell/cli-collection.nix
-    ../../user/wm/hyprland/hyprland.nix
+    #../../system/wm/hyprland.nix
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

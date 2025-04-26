@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 {
   options = {
-    snowflake.pipewire.enable = lib.mkEnable "Enable sound using PipeWire";
+    snowflake.pipewire.enable = lib.mkEnableOption "Enable sound using PipeWire";
   };
 
   config = lib.mkIf

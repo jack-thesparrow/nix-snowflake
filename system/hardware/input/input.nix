@@ -1,4 +1,4 @@
-{ config, pkgs, libs, ... }:
+{ config, pkgs, lib, ... }:
 {
   options = {
     snowflake.input.enable = lib.mkEnableOption "Enable I/O";

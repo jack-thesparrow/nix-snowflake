@@ -24,7 +24,7 @@
         modules = [
           ./profiles/personal/configuration.nix
           chaotic.nixosModules.default
-          ./user/wm/hyprland/hyprland.nix
+          ./system/wm/hyprland.nix
         ];
         specialArgs = {
           inherit chaotic;
