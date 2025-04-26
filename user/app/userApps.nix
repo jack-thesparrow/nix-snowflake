@@ -6,5 +6,6 @@
     ./ranger/ranger.nix
     ./terminals/kitty.nix
     ./terminals/ghostty.nix
+    ./firefox.nix
   ];
 }

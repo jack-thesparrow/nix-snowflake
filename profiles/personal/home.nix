@@ -19,6 +19,7 @@
   # environment.
   home.packages = with pkgs; [
     hello
+    #firefox
   ];
   imports = [ 
     ../../user/app/userApps.nix

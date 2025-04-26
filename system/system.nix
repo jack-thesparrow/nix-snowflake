@@ -2,6 +2,7 @@
 {
   imports = [
     ./console/console-font.nix
+    ./fonts/fonts.nix
     ./hardware/gpu/gpu.nix
     ./hardware/kernel/cachy-kernel.nix
     ./hardware/sound/pipewire.nix
