@@ -1,4 +1,4 @@
-{ config, pkgs, lib, hyprland, ... }:
+{ config, pkgs, lib, ... }:
 {
   options = {
     snowflake.hyprland.enable = lib.mkEnableOption "Enable Hyprland WM";

@@ -17,13 +17,14 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Enable the CachyOS Kernel
-  snowflake.enableCachyKernel = true;
 
   # Enable hyprland
   #services.xserver.windowManager.hyprland.enable = true; 
   snowflake = {
     hyprland.enable = true;
+    pipewire.enable = true;
+    xe.gpu.enable = true;
+    CachyKernel.enable = true; # Enable the CachyOS Kernel
   };
 
   networking.hostName = "nixos"; # Define your hostname.
