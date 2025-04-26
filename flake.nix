@@ -8,8 +8,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     chaotic.inputs.nixpkgs.follows = "nixpkgs";
+    # Hyprland from stream
+    hyprland.url = "github:hyprwm/Hyprland";
   };
-  outputs = {self, nixpkgs, home-manager, chaotic, ... }:
+  outputs = {self, nixpkgs, home-manager, chaotic, hyprland, ... }:
   let 
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -22,9 +24,11 @@
         modules = [
           ./profiles/personal/configuration.nix
           chaotic.nixosModules.default
+          ./user/wm/hyprland/hyprland.nix
         ];
         specialArgs = {
           inherit chaotic;
+          inherit hyprland;
         };
       };
     };

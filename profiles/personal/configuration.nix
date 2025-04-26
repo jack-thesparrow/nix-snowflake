@@ -10,6 +10,7 @@
     ../../system/hardware-configuration.nix
     ../../profiles/personal/modules/console/console-font.nix
     ./modules/kernel/cachy-kernel.nix
+    ../../user/wm/hyprland/hyprland.nix
     ];
 
   # Bootloader.
@@ -18,8 +19,11 @@
 
   # Enable the CachyOS Kernel
   enableCachyKernel = true;
-  #boot.kernelPackages = pkgs.linuxPackages_cachyos;
-  
+
+  # Enable hyprland
+  #services.xserver.windowManager.hyprland.enable = true; 
+  hyprlandDesktop.enable = true;
+
   networking.hostName = "nixos"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -54,9 +58,6 @@
     variant = "";
   };
   
-  # Use the Cachy Kernel
-  #my.kernel.useCachy = true;
-  #boot.kernelPackages = pkgs.linuxPackages_cachyos;
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.rahul = {
@@ -83,7 +84,6 @@
   environment.shells = with pkgs; [ fish zsh bash ];
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
