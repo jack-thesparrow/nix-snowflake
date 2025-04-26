@@ -11,6 +11,7 @@
     ../../system/console/console-font.nix
     ../../system/hardware/kernel/cachy-kernel.nix
     ../../system/system.nix
+    ../../user/fonts/fonts.nix
     ];
 
   # Bootloader.
@@ -25,6 +26,7 @@
     pipewire.enable = true;
     xe.gpu.enable = true;
     CachyKernel.enable = true; # Enable the CachyOS Kernel
+    fonts.enable = true;
   };
 
   networking.hostName = "nixos"; # Define your hostname.
