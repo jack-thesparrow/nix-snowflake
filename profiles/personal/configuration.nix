@@ -8,9 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
     ../../system/hardware-configuration.nix
-    ../../profiles/personal/modules/console/console-font.nix
-    ./modules/kernel/cachy-kernel.nix
-    ../../user/wm/hyprland/hyprland.nix
+    ../../system/console/console-font.nix
+    ../../system/hardware/kernel/cachy-kernel.nix
+    ../../system/system.nix
     ];
 
   # Bootloader.
