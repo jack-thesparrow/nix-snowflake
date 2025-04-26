@@ -1,11 +1,18 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, inputs, ... }:
 {
-  home.packages = with pkgs; [
-    kitty
-  ];
-  programs.kitty.enable = true;
-  programs.kitty.settings = {
-    background_opacity = lib.mkForce "0.85";
+  programs.kitty = {
+    enable = true;
 
+    settings = {
+      scrollback_lines = 10000;
+      enable_audio_bell = true;
+
+      font_family = "JetBrainsMono Nerd Font";
+      bold_font = "JetBrainsMono Nerd Font Bold";
+      italic_font= "JetBrainsMono Nerd Font Italic";
+      bold_italic_font = "JetBrainsMono Nerd Font Bold Italic";
+
+      font_size = 8;
+    };
   };
 }
