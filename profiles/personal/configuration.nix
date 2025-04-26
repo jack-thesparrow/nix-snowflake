@@ -11,7 +11,7 @@
     ../../system/console/console-font.nix
     ../../system/hardware/kernel/cachy-kernel.nix
     ../../system/system.nix
-    ../../user/fonts/fonts.nix
+    ../../system/fonts/fonts.nix
     ];
 
   # Bootloader.
