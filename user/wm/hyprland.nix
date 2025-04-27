@@ -20,6 +20,15 @@ in
           monitor = ",preferred,auto,auto";
 
           general = {
+
+            # Main modifier
+            "$mainMod" = "SUPER";
+            
+            # Assign apps
+            "$terminal" = "ghostty";
+            "$fileManager" = "thunar";
+            "$browser" = "firefox";
+
             layout = cfg.layout;
             border_size = 2;
 
@@ -43,17 +52,23 @@ in
           };
 
           # Keybindings
-          "$mainMod" = "SUPER";
 
           bind = [
+            # For binding shortcuts
             "$mainMod, Q, killactive"
-            "$mainMod, T, exec, ghostty"
-            "$mainMod, F, exec, firefox"
-            "$mainMod, E, exec, thunar"
+            "$mainMod, T, exec, $terminal"
+            "$mainMod, F, exec, $browser"
+            "$mainMod, E, exec, $fileManager"
+
+            # For workspaces
+            "$mainMod, left, movefocus, l"
+            "$mainMod, right, movefocus, r"
+            "$mainMod, up, movefocus, u"
+            "$mainMod, down, movefocus, d"
           ];
           bindm = [
-            "$mainMod, mouse:273, movewindow"
-            "$mainMod, mouse:273, resizewindow"
+            "$mainMod, mouse:272, movewindow"
+            "$mainMod, mouse:272, resizewindow"
           ];
           input = {
             kb_layout = "us";

@@ -5,6 +5,7 @@ let
     ".." = "cd ..";
     "cls" = "clear";
     "dots" = "cd && cd .dotfiles";
+    "dost" = "cd && cd .dotfiles";
   };
 in
   {
