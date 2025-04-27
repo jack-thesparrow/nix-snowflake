@@ -6,6 +6,8 @@
     ./ranger/ranger.nix
     ./terminals/kitty.nix
     ./terminals/ghostty.nix
-    ./firefox.nix
+    ./browsers/librewolf.nix
+    ./browsers/firefox.nix
+    ./filemanagers/thunar.nix
   ];
 }
