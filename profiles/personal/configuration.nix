@@ -27,7 +27,7 @@
     hyprland.enable = true;
     pipewire.enable = true;
     xe.gpu.enable = true;
-    CachyKernel.enable = true; # Enable the CachyOS Kernel
+    CachyKernel.enable= true; # Enable the CachyOS Kernel
     #fonts.enable = true;
   };
 
