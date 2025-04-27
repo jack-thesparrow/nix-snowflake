@@ -1,8 +1,5 @@
-{host, ...}:
-let
-  inherit (import ../../profiles/personal/variables.nix)
-  ;
-in {
+{variables, ...}:
+{
   imports = [
     ./binds.nix
     ./hyprland.nix

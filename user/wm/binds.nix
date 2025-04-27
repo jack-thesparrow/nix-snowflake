@@ -1,11 +1,6 @@
-{ host, ... }:
-let
-  inherit (import ../../profiles/personal/variables.nix)
-  terminal
-  browser
-  fileManager
-  ;
-in {
+{ configs, variables, pkgs, ... }:
+ 
+{
   wayland.windowManager.hyprland.settings = {
     bind = [
       # Window/Session actions

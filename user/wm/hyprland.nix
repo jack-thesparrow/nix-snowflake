@@ -1,6 +1,5 @@
-{ config, pkgs, host, lib, ... }:
+{ config, pkgs, variables, lib, ... }:
 let
-  inherit (import ../../profiles/personal/variables.nix);
   cfg = config.hyprland-config;
 in
   {
