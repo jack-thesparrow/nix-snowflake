@@ -11,5 +11,6 @@
     ./hardware/input/input.nix
     ./apps/waybar/waybar.nix
     ./sysUtils/sysUtils.nix
+    ./dm/sddm.nix
   ];
 }

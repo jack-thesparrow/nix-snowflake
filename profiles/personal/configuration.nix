@@ -8,18 +8,15 @@
   imports =
     [ # Include the results of the hardware scan.
     ../../system/hardware-configuration.nix
-    ../../system/console/console-font.nix
-    ../../system/hardware/kernel/cachy-kernel.nix
     ../../system/system.nix
-    #../../system/fonts/fonts.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.kernelModules = [ "xe" ];
   #boot.blacklistedKernelModules = [ "i915" ];
-
+  boot.initrd.kernelModules = [ "xe" ];
+  #boot.kernelParams = ["xe.force_probe = 00.02.0"];
 
   # Enable hyprland
   #services.xserver.windowManager.hyprland.enable = true; 
@@ -30,7 +27,10 @@
     CachyKernel.enable= true; # Enable the CachyOS Kernel
     #fonts.enable = true;
   };
-
+  environment.variables = {
+    XDG_SESSION_TYPE = "wayland";
+    GDK_BACKEND = "wayland";
+  }; 
   networking.hostName = "nixos"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
