@@ -1,4 +1,4 @@
-{ config, pkgs, variables, lib, ... }:
+{ config, pkgs, lib, ... }:
 let
   cfg = config.hyprland-config;
 in
@@ -23,11 +23,11 @@ in
 
             # Main modifier
             "$mainMod" = "SUPER";
-            #
-            ## Assign apps
-            #"$terminal" = "ghostty";
-            #"$fileManager" = "thunar";
-            #"$browser" = "firefox";
+            
+            # Assign apps
+            "$terminal" = "ghostty";
+            "$fileManager" = "thunar";
+            "$browser" = "firefox";
 
             layout = cfg.layout;
             border_size = 2;

@@ -1,4 +1,4 @@
-{ configs, variables, pkgs, ... }:
+{ configs,pkgs, ... }:
  
 {
   wayland.windowManager.hyprland.settings = {
@@ -12,7 +12,7 @@
 
       # Keybinds for applications
       "$mainMod, T, exec, $terminal"
-      "$mainMod, F, exec, $firefox"
+      "$mainMod, F, exec, $browser"
       "$mainMod, E, exec, $fileManager"
 
       # Move between grouped windows
@@ -24,7 +24,7 @@
       "$mainMod, right, movefocus, r"
       "$mainMod, up, movefocus, u "
       "$mainMod, down, movefocus, d"
-      "Alt, Tab, movefocus, d"
+      "Alt, Tab, cyclenext"
 
       # Switch workspaces
       "$mainMod, 1, workspace, 1"
@@ -39,18 +39,46 @@
       "$mainMod, 0, workspace, 10"
 
       #Switch workspaces to a relative workspace
-      "$mainMod+Ctl,Right,workspace,r+1"
-      "$mainMod+Ctl,Left,workspace,r-1"
+      "$mainMod+Ctrl,Right,workspace,r+1"
+      "$mainMod+Ctrl,Left,workspace,r-1"
 
       # Move to first empty workspace
-      "$mainMod+Ctl, Down, workspace,empty"
+      "$mainMod+Ctrl, Down, workspace,empty"
 
+      # Resize windows
+      "$mainMod+Shift, Right, resizeactive,30 0"
+      "$mainMod+Shift, Left, resizeactive,-30 0"
+      "$mainMod+Shift, Up, resizeactive,0 -30"
+      "$mainMod+Shift, Down, resizeactive,0 30"
+
+      # Switch workspaces
+      "$mainMod+Shift, 1,movetoworkspace, 1"
+      "$mainMod+Shift, 2,movetoworkspace, 2"
+      "$mainMod+Shift, 3,movetoworkspace, 3"
+      "$mainMod+Shift, 4,movetoworkspace, 4"
+      "$mainMod+Shift, 5,movetoworkspace, 5"
+      "$mainMod+Shift, 6,movetoworkspace, 6"
+      "$mainMod+Shift, 7,movetoworkspace, 7"
+      "$mainMod+Shift, 8,movetoworkspace, 8"
+      "$mainMod+Shift, 9,movetoworkspace, 9"
+      "$mainMod+Shift, 0,movetoworkspace, 10"
+
+      # Move focused window to a relative workspace
+      "$mainMod+Ctrl+Alt, Right, movetoworkspace, r+1"
+      "$mainMod+Ctrl+Alt, Left, movetoworkspace, r-1"
+
+      # Scroll through existing workspaces
+      "$mainMod, mouse_down,workspace,e+1"
+      "$mainMod, mouse_up, workspace, e-1"
+      # Utils Keybind
     ];
 
     # Keybinds for mouse
     bindm = [
       "$mainMod, mouse:272, movewindow"
       "$mainMod, mouse:273, resizewidow"
+      "$mainMod, Z, movewindow"
+      "$mainMod, X, resizewindow"
     ];
   };
 }

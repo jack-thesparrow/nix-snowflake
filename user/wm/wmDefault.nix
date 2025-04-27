@@ -1,4 +1,4 @@
-{variables, ...}:
+{pkgs, ...}:
 {
   imports = [
     ./binds.nix

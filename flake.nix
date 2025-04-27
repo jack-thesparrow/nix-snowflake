@@ -16,20 +16,17 @@
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-    variables = import ./profiles/personal/variables.nix;
   
   in {
     nixosConfigurations = {
       nixos = lib.nixosSystem {
         inherit system;
-        inherit variables;
         modules = [
           ./profiles/personal/configuration.nix
           chaotic.nixosModules.default
           ./system/wm/hyprland.nix
         ];
         specialArgs = {
-          inherit variables;
           inherit chaotic;
           inherit hyprland;
         };
@@ -38,12 +35,13 @@
     homeConfigurations = {
       rahul = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        inherit variables;
         modules = [
           ./profiles/personal/home.nix
+          ./user/wm/wmDefault.nix
         ];
       };			
     };
+
     devShells = {
       ${system} = {
         default = pkgs.mkShell {
