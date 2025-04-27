@@ -37,9 +37,11 @@
         inherit pkgs;
         modules = [
           ./profiles/personal/home.nix
+          ./user/wm/wmDefault.nix
         ];
       };			
     };
+
     devShells = {
       ${system} = {
         default = pkgs.mkShell {

@@ -53,23 +53,23 @@ in
 
           # Keybindings
 
-          bind = [
-            # For binding shortcuts
-            "$mainMod, Q, killactive"
-            "$mainMod, T, exec, $terminal"
-            "$mainMod, F, exec, $browser"
-            "$mainMod, E, exec, $fileManager"
+         # bind = [
+         #   # For binding shortcuts
+         #   "$mainMod, Q, killactive"
+         #   "$mainMod, T, exec, $terminal"
+         #   "$mainMod, F, exec, $browser"
+         #   "$mainMod, E, exec, $fileManager"
 
-            # For workspaces
-            "$mainMod, left, movefocus, l"
-            "$mainMod, right, movefocus, r"
-            "$mainMod, up, movefocus, u"
-            "$mainMod, down, movefocus, d"
-          ];
-          bindm = [
-            "$mainMod, mouse:272, movewindow"
-            "$mainMod, mouse:272, resizewindow"
-          ];
+         #   # For workspaces
+         #   "$mainMod, left, movefocus, l"
+         #   "$mainMod, right, movefocus, r"
+         #   "$mainMod, up, movefocus, u"
+         #   "$mainMod, down, movefocus, d"
+         # ];
+         # bindm = [
+         #   "$mainMod, mouse:272, movewindow"
+         #   "$mainMod, mouse:272, resizewindow"
+         # ];
           input = {
             kb_layout = "us";
             kb_variant = "";

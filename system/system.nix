@@ -9,5 +9,7 @@
     ./wm/hyprland.nix
     ./wm/wayland.nix
     ./hardware/input/input.nix
+    ./apps/waybar/waybar.nix
+    ./sysUtils/sysUtils.nix
   ];
 }
