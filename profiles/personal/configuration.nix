@@ -18,7 +18,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.kernelModules = [ "xe" ];
-  boot.blacklistedKernelModules = [ "i915" ];
+  #boot.blacklistedKernelModules = [ "i915" ];
 
 
   # Enable hyprland
