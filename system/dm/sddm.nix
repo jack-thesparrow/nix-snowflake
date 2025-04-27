@@ -1,6 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, hyprland, ... }:
 {
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  #services.displayManager.defaultSession = "hyprland";
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm.wayland = true;
+  services.displayManager.defaultSession = "hyprland";
+  environment.systemPackages = with pkgs; [
+    hyprland.packages.${pkgs.system}.hyprland
+  ];
 }

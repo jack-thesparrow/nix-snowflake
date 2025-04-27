@@ -26,11 +26,8 @@
     xe.gpu.enable = true;
     CachyKernel.enable= true; # Enable the CachyOS Kernel
     #fonts.enable = true;
+    #linux-mainline-kernel.enable = true;
   };
-  environment.variables = {
-    XDG_SESSION_TYPE = "wayland";
-    GDK_BACKEND = "wayland";
-  }; 
   networking.hostName = "nixos"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
