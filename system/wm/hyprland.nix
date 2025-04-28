@@ -6,7 +6,7 @@
 
   config = lib.mkIf config.snowflake.hyprland.enable {
     environment.systemPackages = [
-      hyprland
+      hyprland.packages.${pkgs.system}.hyprland
     ];
   };
 }
