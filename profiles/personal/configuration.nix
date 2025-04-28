@@ -15,7 +15,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   #boot.blacklistedKernelModules = [ "i915" ];
-  boot.initrd.kernelModules = [ "xe" ];
+  #boot.initrd.kernelModules = [ "xe" ];
   #boot.kernelParams = ["xe.force_probe = 00.02.0"];
 
   # Enable hyprland
@@ -23,7 +23,7 @@
   snowflake = {
     hyprland.enable = true;
     pipewire.enable = true;
-    xe.gpu.enable = true;
+    xe.gpu.enable = false;
     selectedKernel = "cachy"; # Enable the CachyOS Kernel
     #fonts.enable = true;
     #linux-mainline-kernel.enable = true;
@@ -88,6 +88,7 @@
   environment.shells = with pkgs; [ fish zsh bash ];
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
+  #systemd.defaultUserShell = pkgs.bash;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

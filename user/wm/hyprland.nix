@@ -17,7 +17,6 @@ in
       wayland.windowManager.hyprland = {
         enable = true;
         settings = {
-          monitor = ",preferred,auto,auto";
 
           general = {
 
@@ -26,7 +25,7 @@ in
             
             # Assign apps
             "$terminal" = "ghostty";
-            "$fileManager" = "thunar";
+            "$fileManager" = "dolphin";
             "$browser" = "firefox";
 
             layout = cfg.layout;

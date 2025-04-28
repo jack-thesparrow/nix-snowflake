@@ -1,6 +1,6 @@
 {
 
-  description = "My first flake!";
+  description = "SnowflakeConfig";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -11,11 +11,12 @@
     # Hyprland from stream
     hyprland.url = "github:hyprwm/Hyprland";
   };
-  outputs = {self, nixpkgs, home-manager, chaotic, hyprland, ... }:
+  outputs = {self, nixpkgs, home-manager, chaotic, hyprland, ... }@inputs:
   let 
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    username = "rahul";
   
   in {
     nixosConfigurations = {
@@ -29,6 +30,7 @@
         specialArgs = {
           inherit chaotic;
           inherit hyprland;
+          inherit username;
         };
       };
     };
@@ -39,6 +41,9 @@
           ./profiles/personal/home.nix
           ./user/wm/wmDefault.nix
         ];
+        extraSpecialArgs = {
+          inherit username;
+        };
       };			
     };
 

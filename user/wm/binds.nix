@@ -2,6 +2,17 @@
  
 {
   wayland.windowManager.hyprland.settings = {
+    gestures = {
+        workspace_swipe = 1;
+        workspace_swipe_fingers = 3;
+        workspace_swipe_distance = 500;
+        workspace_swipe_invert = 1;
+        workspace_swipe_min_speed_to_force = 30;
+        workspace_swipe_cancel_ratio = 0.5;
+        workspace_swipe_create_new = 1;
+        workspace_swipe_forever = 1;
+      };
+
     bind = [
       # Window/Session actions
       "$mainMod, Delete, exit" #kill hyprland session
@@ -9,7 +20,7 @@
       "$mainMod, W, togglefloating" # toggle floating window
       "$mainMod, G, togglegroup" # toggle the window between focus and group
       "Alt, Return, fullscreen" # toggle the window between focus and fullscreen
-
+      "$mainMod, L, exec, hyprlock"
       # Keybinds for applications
       "$mainMod, T, exec, $terminal"
       "$mainMod, F, exec, $browser"
@@ -70,6 +81,29 @@
       # Scroll through existing workspaces
       "$mainMod, mouse_down,workspace,e+1"
       "$mainMod, mouse_up, workspace, e-1"
+
+      # Move/Switch to special workspace (scratchpad)
+      "bind = $mainMod+Alt, S, movetoworkspacesilent, special"
+      "bind = $mainMod, S, togglespecialworkspace,"
+
+
+       # Move focused window to a workspace silently    
+       "bind = $mainMod+Alt, 1, movetoworkspacesilent, 1 "
+       "bind = $mainMod+Alt, 2, movetoworkspacesilent, 2 "
+       "bind = $mainMod+Alt, 3, movetoworkspacesilent, 3 "
+       "bind = $mainMod+Alt, 4, movetoworkspacesilent, 4 "
+       "bind = $mainMod+Alt, 5, movetoworkspacesilent, 5 "
+       "bind = $mainMod+Alt, 6, movetoworkspacesilent, 6 "
+       "bind = $mainMod+Alt, 7, movetoworkspacesilent, 7 "
+       "bind = $mainMod+Alt, 8, movetoworkspacesilent, 8 "
+       "bind = $mainMod+Alt, 9, movetoworkspacesilent, 9 "
+       "bind = $mainMod+Alt, 0, movetoworkspacesilent, 10"
+
+
+        # Toggle focused window split
+        "bind = $mainMod, J, togglesplit"
+
+
       # Utils Keybind
     ];
 

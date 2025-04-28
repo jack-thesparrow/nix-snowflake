@@ -9,5 +9,7 @@
     ./browsers/librewolf.nix
     ./browsers/firefox.nix
     ./filemanagers/thunar.nix
+    ./filemanagers/dolphin.nix
+    ./ventoy/ventoy.nix
   ];
 }
