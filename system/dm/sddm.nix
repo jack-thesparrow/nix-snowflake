@@ -3,8 +3,8 @@
   imports = [
     ../wm/hyprland.nix
   ];
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.gdm.wayland = true;
+  services.xserver.enable = true;
+  services.displayManager.sddm.enable = true;
   services.displayManager.defaultSession = "hyprland";
   environment.systemPackages = [
     hyprland.packages.${pkgs.system}.hyprland
