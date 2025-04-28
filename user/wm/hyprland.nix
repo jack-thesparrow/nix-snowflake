@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib,... }:
 let
   cfg = config.hyprland-config;
 in
@@ -12,12 +12,26 @@ in
         };
       };
     };
-
     config = lib.mkIf cfg.enable {
+      systemd.user.targets.hyprland-session.Unit.Wants = [
+        "xdg-desktop-autostart.target"
+      ];
+
       wayland.windowManager.hyprland = {
         enable = true;
-        settings = {
 
+        systemd = {
+          enable = true;
+          enableXdgAutostart = true;
+          variables = ["--all"];
+        };
+        xwayland = {
+          enable = true;
+        };
+
+
+
+        settings = {
           general = {
 
             # Main modifier
@@ -50,25 +64,6 @@ in
             preserve_split = true;
           };
 
-          # Keybindings
-
-         # bind = [
-         #   # For binding shortcuts
-         #   "$mainMod, Q, killactive"
-         #   "$mainMod, T, exec, $terminal"
-         #   "$mainMod, F, exec, $browser"
-         #   "$mainMod, E, exec, $fileManager"
-
-         #   # For workspaces
-         #   "$mainMod, left, movefocus, l"
-         #   "$mainMod, right, movefocus, r"
-         #   "$mainMod, up, movefocus, u"
-         #   "$mainMod, down, movefocus, d"
-         # ];
-         # bindm = [
-         #   "$mainMod, mouse:272, movewindow"
-         #   "$mainMod, mouse:272, resizewindow"
-         # ];
           input = {
             kb_layout = "us";
             kb_variant = "";
@@ -84,7 +79,13 @@ in
               natural_scroll = true;
             };
           };
-          
+          cursor = {
+            sync_gsettings_theme = true;
+            no_hardware_cursors = 2; # change to 1 if want to disable
+            enable_hyprcursor = false;
+            warp_on_change_workspace = 2;
+            no_warps = true;
+          };
 
           misc = {
             disable_hyprland_logo = true;

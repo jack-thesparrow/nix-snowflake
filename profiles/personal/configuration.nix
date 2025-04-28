@@ -14,10 +14,12 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  #boot.blacklistedKernelModules = [ "i915" ];
-  #boot.initrd.kernelModules = [ "xe" ];
-  #boot.kernelParams = ["xe.force_probe = 00.02.0"];
+  boot.blacklistedKernelModules = [ "i915" ];
+  boot.initrd.kernelModules = [ "xe" ];
+  boot.kernelParams = ["xe.force_probe=*"];
 
+  services.xserver.enable = true;
+  services.xserver.videoDrivers = [ "xe" ];
   # Enable hyprland
   #services.xserver.windowManager.hyprland.enable = true; 
   snowflake = {
