@@ -4,6 +4,10 @@
     snowflake.xe.gpu.enable = lib.mkEnableOption "Enable Intel Xe GPU drivers for Arc A530M";
   };
   config = lib.mkIf config.snowflake.xe.gpu.enable {
+    boot.blacklistedKernelModules = [ "i915" ];
+    boot.initrd.kernelModules = [ "xe" ];
+    boot.kernelParams = [ "xe.force_probe=*" ];
+    services.xserver.enable = true;
     services.xserver.videoDrivers = [ "xe" ];
     hardware.graphics.enable = true;
     hardware.graphics.enable32Bit = true;

@@ -11,24 +11,15 @@
     ../../system/system.nix
     ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.blacklistedKernelModules = [ "i915" ];
-  boot.initrd.kernelModules = [ "xe" ];
-  boot.kernelParams = ["xe.force_probe=*"];
+  # Bootloader configs in system/boot/.
 
-  services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "xe" ];
   # Enable hyprland
-  #services.xserver.windowManager.hyprland.enable = true; 
   snowflake = {
     hyprland.enable = true;
     pipewire.enable = true;
-    xe.gpu.enable = false;
+    xe.gpu.enable = true;
     selectedKernel = "cachy"; # Enable the CachyOS Kernel
     #fonts.enable = true;
-    #linux-mainline-kernel.enable = true;
   };
   networking.hostName = "nixos"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
